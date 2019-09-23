@@ -103,7 +103,7 @@ ul {
 }
 
 ul.mold li::before {
-  content: "\2022";
+  content: "*";
   color: var(--yellow);
   font-weight: bold;
   display: inline-block;
