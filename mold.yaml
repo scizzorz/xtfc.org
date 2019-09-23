@@ -1,0 +1,4 @@
+recipes:
+  fmt:
+    help: "Run prettier"
+    command: ["prettier", "--print-width", "88", "--write", "index.html", "main.css"]
