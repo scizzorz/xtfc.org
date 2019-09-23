@@ -1,41 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>XTFC Manifesto</title>
-    <link rel="icon" type="image/png" href="/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta charset="utf-8" />
+    <title>xtfc</title>
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css" />
+    <link rel="stylesheet" href="main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
-  <body>
-    <div id="container">
-      <div id="manifesto">
-        <p>
-          Hunger is the enemy of progress.
-        </p>
-        <p>
-          We seek to abolish its very existence, to absolve ourselves of its boundless agony.
-          We seek to eviscerate the rapacious atrocity and eradicate its existence, that we may swiftly cauterize our gangrenous wounds.
-        </p>
-        <p>
-          Just as malnourishment flaunts its pugnacious and sordid presence, we shall swell up from the tenebrous depths of deprivation with a ravenous appetitite.
-        </p>
-        <p>
-          We shall advance as an unbreakable bulwark, banishing the pervasive anathema from our wake.
-          We shall devour like a caustic venom, conflagrating the pangs of famine with fiery celerity.
-          We shall temper our steel with ironbound conviction, wrought from the forge of righteous vindication.
-          We shall deracinate the very disposition of hunger itself and requisition its sepulchral hearth as our own.
-          We shall asphyxiate its infinite darkness and innervate the atrabilious void with our own effulgence.
-        </p>
-        <p>
-          We stand as one!
-          A confluence of indignant victims, lambasting the iniquities against us.
-          The incongruous beast shall tremble beneath the weight of our concerted might, its nefarious turpitude subsumed by our savory coruscation.
-        </p>
-        <p>
-          Hunger shall quake before us.
-        </p>
-      </div>
-    </div>
+  <body id="xtfc">
+    <header>
+      <a href="https://github.com/xtfc">XTFC</a>
+    </header>
+    <p>
+      A club for eXtreme friends.
+    </p>
+    <p>
+      We specialize in coming up with great ideas and then half-assing them because
+      everyone has jobs and other hobbies. Whatever.
+    </p>
+
+    <section id="mold">
+      <header>
+        <a href="https://github.com/xtfc/mold">Mold</a>
+      </header>
+      <p>
+        A fresh approach to managing common development tasks like running tests,
+        checking code quality, or building documentation. Easily the most useful thing
+        here.
+      </p>
+      <p><strong>Mold</strong> is heavily built around a few core ideas:</p>
+      <ul>
+        <li>Reusable, parametrized modules that can be included via URL</li>
+        <li>Documenting project tasks in a discoverable way</li>
+        <li>Reducing complexity of task execution</li>
+        <li>Using the same commands locally, in CI/CD, and production</li>
+      </ul>
+      <p><a href="mold.html">Read more...</a></p>
+    </section>
+
+    <section id="xcl">
+      <header>
+        <a href="https://github.com/xtfc/xcl-py">XCL</a>
+      </header>
+      <p>
+        A configuration language that's enjoyable by people and robots.
+      </p>
+      <p>
+        I dunno. Mostly just read the
+        <a href="https://github.com/hashicorp/hcl#why">HCL</a> explanation, but then
+        throw in a paragraph about how I think HCL is kinda awkward sometimes.
+      </p>
+      <p>
+        Plus it's just not very eXtreme.
+      </p>
+    </section>
+
+    <section id="milk">
+      <header>
+        <a href="https://github.com/scizzorz/milk">Milk</a>
+      </header>
+      <p>
+        A modern, simplified porcelain for Git.
+      </p>
+      <p>
+        Git's UX kinda sucks a lot. It has an absurd amount of command overloading,
+        inconsistency between commands arguments, overwhelming complexity, unpleasant
+        defaults, etc. <strong>Milk</strong>
+        aims to cut back on a lot of these issues and provide a more user-friendly
+        interface to Git.
+      </p>
+    </section>
+
+    <section id="mask">
+      <header>
+        <a href="https://github.com/scizzorz/mask">Mask</a>
+      </header>
+      <p>
+        A cute lil programming language inspired by Lua.
+      </p>
+    </section>
+
+    <section id="vx">
+      <header>
+        <a href="https://github.com/philipdexter/vx">vx</a>
+      </header>
+      <p>
+        A modern terminal text editor.
+      </p>
+
+      <p>
+        This aimed to separate the user-facing command / editing interface from the
+        backend editor implementation. The approach was to ship a text editor that
+        exposed its editing API as a Python module, but with no functionality configured
+        by default. <strong>vx</strong> would source your <code>~/.vxrc.py</code> file
+        within the scope of the editor, which could then configure any keybindings,
+        syntax highlighting, windows / panes, etc.
+      </p>
+      <p>
+        It got half-assed pretty hard, but it was fun. Anyway, check out
+        <a href="https://github.com/xi-editor/xi-editor">xi</a>
+        because it seems to be an even better idea.
+      </p>
+    </section>
   </body>
 </html>
