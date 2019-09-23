@@ -24,7 +24,34 @@
   --foreground: var(--base5);
   --codebg: var(--base1);
   --codefg: var(--base4);
-  --accent: var(--orange);
+  --accent: var(--base3);
+  --lowlight: var(--base3);
+
+  --mask: var(--purple);
+  --milk: var(--blue);
+  --mold: var(--yellow);
+  --vx: var(--teal);
+  --xcl: var(--pink);
+  --xtfc: var(--orange);
+}
+
+#mask {
+  --accent: var(--mask);
+}
+#milk {
+  --accent: var(--milk);
+}
+#mold {
+  --accent: var(--mold);
+}
+#vx {
+  --accent: var(--vx);
+}
+#xcl {
+  --accent: var(--xcl);
+}
+#xtfc {
+  --accent: var(--xtfc);
 }
 
 html {
@@ -116,25 +143,6 @@ pre code {
   color: var(--codefg);
 }
 
-#mask {
-  --accent: var(--purple);
-}
-#milk {
-  --accent: var(--blue);
-}
-#mold {
-  --accent: var(--yellow);
-}
-#vx {
-  --accent: var(--teal);
-}
-#xcl {
-  --accent: var(--pink);
-}
-#xtfc {
-  --accent: var(--orange);
-}
-
 #getmold {
   text-align: center;
 }
@@ -149,5 +157,15 @@ pre {
   background-color: var(--codebg);
 }
 
-pre code {
+.byline {
+  color: var(--lowlight);
+}
+
+.byline a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.byline a:hover {
+  color: var(--xtfc);
 }
