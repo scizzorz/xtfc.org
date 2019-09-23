@@ -19,6 +19,12 @@
   --purple: #ad6bff;
   --magenta: #f542ff;
   --pink: #ff32a3;
+
+  --background: var(--base0);
+  --foreground: var(--base5);
+  --codebg: var(--base1);
+  --codefg: var(--base4);
+  --accent: var(--orange);
 }
 
 
@@ -41,30 +47,11 @@
 .magenta {color: var(--magenta);}
 .pink {color: var(--pink);}
 
-hr.base0 {border-color: var(--base0);}
-hr.base1 {border-color: var(--base1);}
-hr.base2 {border-color: var(--base2);}
-hr.base3 {border-color: var(--base3);}
-hr.base4 {border-color: var(--base4);}
-hr.base5 {border-color: var(--base5);}
-hr.red {border-color: var(--red);}
-hr.orange {border-color: var(--orange);}
-hr.yellow {border-color: var(--yellow);}
-hr.lime {border-color: var(--lime);}
-hr.green {border-color: var(--green);}
-hr.teal {border-color: var(--teal);}
-hr.cyan {border-color: var(--cyan);}
-hr.blue {border-color: var(--blue);}
-hr.indigo {border-color: var(--indigo);}
-hr.purple {border-color: var(--purple);}
-hr.magenta {border-color: var(--magenta);}
-hr.pink {border-color: var(--pink);}
-
 html {
   font-family: 'Fira Mono', monospace;
   font-size: 11pt;
-  color: var(--base5);
-  background-color: var(--base0);
+  color: var(--foreground);
+  background-color: var(--background);
 }
 
 #container {
@@ -88,12 +75,12 @@ html {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--accent);
 }
 
 a:hover {
   text-decoration: none;
-  color: var(--base5);
+  color: var(--foreground);
 }
 
 ul {
@@ -102,20 +89,17 @@ ul {
   padding-inline-start: 1em;
 }
 
-ul.mold li::before {
+ul li::before {
   content: "*";
-  color: var(--yellow);
+  color: var(--accent);
   font-weight: bold;
   display: inline-block;
   width: 1em;
   margin-left: -1em;
 }
 
-ul.mold li {
-  color: var(--base5);
-}
-
 header {
+  color: var(--accent);
   font-size: 2em;
   border-width: 0 0 4px 0;
   border-style: solid;
@@ -137,7 +121,18 @@ section > section > header {
   border-style: solid;
 }
 
-strong {color: var(--base4)}
+strong {
+  font-weight: normal;
+  color: var(--accent);
+}
+
+code {
+  color: var(--accent);
+}
+
+pre code {
+  color: var(--codefg);
+}
 
 #getmold {
   text-align: center;
@@ -147,13 +142,12 @@ strong {color: var(--base4)}
 #getmold code {
   margin: 0 auto;
   padding: 0.5em;
-  border: 1px solid var(--base0);
-  background-color: var(--base1);
+  background-color: var(--codebg);
 }
 
-.mask {color: var(--purple);}
-.milk {color: var(--blue);}
-.mold {color: var(--yellow);}
-.vx {color: var(--teal);}
-.xcl {color: var(--pink);}
-.xtfc {color: var(--orange);}
+#mask {--accent: var(--purple);}
+#milk {--accent: var(--blue);}
+#mold {--accent: var(--yellow);}
+#vx {--accent: var(--teal);}
+#xcl {--accent: var(--pink);}
+#xtfc {--accent: var(--orange);}
