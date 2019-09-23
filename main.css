@@ -86,20 +86,39 @@ html {
   }
 }
 
-header {
-  font-size: 2em;
-  border-width: 0 0 4px 0;
-  border-style: solid;
-}
-
-header a {
+a {
   text-decoration: none;
   color: inherit;
 }
 
-header a:hover {
+a:hover {
   text-decoration: none;
   color: var(--base5);
+}
+
+ul {
+  list-style: none;
+  margin: 1em 0;
+  padding-inline-start: 1em;
+}
+
+ul.mold li::before {
+  content: "\2022";
+  color: var(--yellow);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+ul.mold li {
+  color: var(--base5);
+}
+
+header {
+  font-size: 2em;
+  border-width: 0 0 4px 0;
+  border-style: solid;
 }
 
 section {
@@ -132,8 +151,9 @@ strong {color: var(--base4)}
   background-color: var(--base1);
 }
 
-.xtfc {color: var(--orange);}
-.mold {color: var(--yellow);}
-.milk {color: var(--blue);}
 .mask {color: var(--purple);}
+.milk {color: var(--blue);}
+.mold {color: var(--yellow);}
 .vx {color: var(--teal);}
+.xcl {color: var(--pink);}
+.xtfc {color: var(--orange);}
