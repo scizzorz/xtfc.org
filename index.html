@@ -1,121 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>xtfc</title>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css" />
+    <link rel="stylesheet" href="main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
   <body>
-    <div id="container">
+    <header>
+      <a href="https://github.com/xtfc">XTFC</a>
+    </header>
+    <p>
+      A club for eXtreme friends.
+    </p>
+    <p>
+      We specialize in coming up with great ideas and then half-assing them because
+      everyone has jobs and other hobbies. Whatever.
+    </p>
+
+    <section id="mold">
       <header>
-        <a href="https://github.com/xtfc">XTFC</a>
+        <a href="https://github.com/xtfc/mold">Mold</a>
       </header>
       <p>
-        A club for eXtreme friends.
+        A fresh approach to managing common development tasks like running tests,
+        checking code quality, or building documentation. Easily the most useful thing
+        here.
+      </p>
+      <p><strong>Mold</strong> is heavily built around a few core ideas:</p>
+      <ul>
+        <li>Reusable, parametrized modules that can be included via URL</li>
+        <li>Documenting project tasks in a discoverable way</li>
+        <li>Reducing complexity of task execution</li>
+        <li>Using the same commands locally, in CI/CD, and production</li>
+      </ul>
+      <p>Get the ready-to-use shell script here:</p>
+      <div id="getmold">
+        <pre><code>curl -sSfL xtfc.org/mold.sh | sh</code></pre>
+      </div>
+      <p>
+        <a href="https://xtfc.org/mold.sh">mold.sh</a> is a stand-in for the
+        <strong>Mold</strong> binary. It's intended to be tracked by version control, so
+        it's suitable for use in environments that don't already have Mold installed,
+        like CI/CD or your coworker's computer. It does require the host environment to
+        have internet access and <code>wget</code> or <code>curl</code>
+        installed, as it transparently downloads a full binary to handle actual
+        execution.
+      </p>
+    </section>
+
+    <section id="xcl">
+      <header>
+        <a href="https://github.com/xtfc/xcl-py">XCL</a>
+      </header>
+      <p>
+        A configuration language that's enjoyable by people and robots.
       </p>
       <p>
-        We specialize in coming up with great ideas and then half-assing them
-        because everyone has jobs and other hobbies.  Whatever.
+        I dunno. Mostly just read the
+        <a href="https://github.com/hashicorp/hcl#why">HCL</a> explanation, but then
+        throw in a paragraph about how I think HCL is kinda awkward sometimes.
+      </p>
       <p>
+        Plus it's just not very eXtreme.
+      </p>
+    </section>
 
-      <section id="mold">
-        <header>
-          <a href="https://github.com/xtfc/mold">Mold</a>
-        </header>
-        <p>
-          A fresh approach to managing common development tasks like running
-          tests, checking code quality, or building documentation. Easily the
-          most useful thing here.
-        </p>
-        <p>
-          <strong>Mold</strong> is heavily built around a few core ideas:
-        </p>
-        <ul>
-          <li>Reusable, parametrized modules that can be included via remote URL</li>
-          <li>Documenting project tasks in a discoverable way</li>
-          <li>Reducing complexity of task execution</li>
-          <li>Using the same commands in local dev, CI/CD, and production environments</li>
-        </ul>
-        <p>Get the ready-to-use shell script here:</p>
-        <pre id="getmold"><code>curl -sSfL xtfc.org/mold.sh | sh</code></pre>
-        <p>
-          <a href="https://xtfc.org/mold.sh">mold.sh</a> is a
-          stand-in for the <strong>Mold</strong> binary. It's intended
-          to be tracked by version control, so it's suitable for use in
-          environments that don't already have Mold installed, like CI/CD or
-          your coworker's computer. It does require the host environment to
-          have internet access and <code>wget</code> or <code>curl</code>
-          installed, as it transparently downloads a full binary to handle
-          actual execution.
-        </p>
-      </section>
+    <section id="milk">
+      <header>
+        <a href="https://github.com/scizzorz/milk">Milk</a>
+      </header>
+      <p>
+        A modern, simplified porcelain for Git.
+      </p>
+      <p>
+        Git's UX kinda sucks a lot. It has an absurd amount of command overloading,
+        inconsistency between commands arguments, overwhelming complexity, unpleasant
+        defaults, etc. <strong>Milk</strong>
+        aims to cut back on a lot of these issues and provide a more user-friendly
+        interface to Git.
+      </p>
+    </section>
 
-      <section id="xcl">
-        <header>
-          <a href="https://github.com/xtfc/xcl-py">XCL</a>
-        </header>
-        <p>
-          A configuration language that's human-usable without being insane.
-        </p>
-        <p>
-          I dunno. Mostly just read the <a
-            href="https://github.com/hashicorp/hcl#why">HCL</a> explanation,
-          but then throw in a paragraph about how I think HCL is kinda awkward
-          sometimes.
-        </p>
-        <p>
-          Plus it's just not very eXtreme.
-        </p>
-      </section>
+    <section id="mask">
+      <header>
+        <a href="https://github.com/scizzorz/mask">Mask</a>
+      </header>
+      <p>
+        A cute lil programming language inspired by Lua.
+      </p>
+    </section>
 
-      <section id="milk">
-        <header>
-          <a href="https://github.com/scizzorz/milk">Milk</a>
-        </header>
-        <p>
-          A modern, simplified porcelain for Git.
-        </p>
-        <p>
-          Git's UX kinda sucks a lot. It has an absurd amount of command
-          overloading, inconsistency between commands arguments, overwhelming
-          complexity, unpleasant defaults, etc. <strong>Milk</strong>
-          aims to cut back on a lot of these issues and provide a more
-          user-friendly interface to Git.
-        </p>
-      </section>
+    <section id="vx">
+      <header>
+        <a href="https://github.com/philipdexter/vx">vx</a>
+      </header>
+      <p>
+        A modern terminal text editor.
+      </p>
 
-      <section id="mask">
-        <header>
-          <a href="https://github.com/scizzorz/mask">Mask</a>
-        </header>
-        <p>
-          A cute lil programming language inspired by Lua.
-        </p>
-      </section>
-
-      <section id="vx">
-        <header>
-          <a href="https://github.com/philipdexter/vx">vx</a>
-        </header>
-        <p>
-          A modern terminal text editor that aimed to separate the user-facing
-          command / editing interface from the backend editor implementation.
-          The approach was to ship a text editor that exposed its editing API
-          as a Python module, but with no functionality configured by default.
-          <strong>vx</strong> would source your <code>~/.vxrc.py</code>
-          file within the scope of the editor, which could then configure any
-          keybindings, syntax highlighting, windows / panes, etc.
-        </p>
-        <p>
-          It got half-assed pretty hard, but it was fun. Anyway, check out
-          <a href="https://github.com/xi-editor/xi-editor">xi</a>
-          because it seems to be an even better idea.
-        </p>
-      </section>
-
-    </div>
+      <p>
+        This aimed to separate the user-facing command / editing interface from the
+        backend editor implementation. The approach was to ship a text editor that
+        exposed its editing API as a Python module, but with no functionality configured
+        by default. <strong>vx</strong> would source your <code>~/.vxrc.py</code> file
+        within the scope of the editor, which could then configure any keybindings,
+        syntax highlighting, windows / panes, etc.
+      </p>
+      <p>
+        It got half-assed pretty hard, but it was fun. Anyway, check out
+        <a href="https://github.com/xi-editor/xi-editor">xi</a>
+        because it seems to be an even better idea.
+      </p>
+    </section>
   </body>
 </html>

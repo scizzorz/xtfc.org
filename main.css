@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono&display=swap");
 
 :root {
   --base0: #2b3235;
@@ -27,34 +27,14 @@
   --accent: var(--orange);
 }
 
-
-.base0 {color: var(--base0);}
-.base1 {color: var(--base1);}
-.base2 {color: var(--base2);}
-.base3 {color: var(--base3);}
-.base4 {color: var(--base4);}
-.base5 {color: var(--base5);}
-.red {color: var(--red);}
-.orange {color: var(--orange);}
-.yellow {color: var(--yellow);}
-.lime {color: var(--lime);}
-.green {color: var(--green);}
-.teal {color: var(--teal);}
-.cyan {color: var(--cyan);}
-.blue {color: var(--blue);}
-.indigo {color: var(--indigo);}
-.purple {color: var(--purple);}
-.magenta {color: var(--magenta);}
-.pink {color: var(--pink);}
-
 html {
-  font-family: 'Fira Mono', monospace;
+  font-family: "Fira Mono", monospace;
   font-size: 11pt;
   color: var(--foreground);
   background-color: var(--background);
 }
 
-#container {
+body {
   width: 42em;
   padding: 1em;
   margin: 0 auto;
@@ -62,31 +42,33 @@ html {
 }
 
 @media (max-width: 44em) {
-  #container {
+  body {
     width: 32em;
   }
 }
 
 @media (max-width: 34em) {
-  #container {
+  body {
     width: 22em;
   }
 }
 
 a {
-  text-decoration: none;
   color: var(--accent);
 }
 
-a:hover {
+header a {
   text-decoration: none;
+}
+
+a:hover {
   color: var(--foreground);
 }
 
 ul {
   list-style: none;
   margin: 1em 0;
-  padding-inline-start: 1em;
+  padding-left: 1em;
 }
 
 ul li::before {
@@ -134,20 +116,38 @@ pre code {
   color: var(--codefg);
 }
 
-#getmold {
-  text-align: center;
-  margin: 1.5em auto;
+#mask {
+  --accent: var(--purple);
+}
+#milk {
+  --accent: var(--blue);
+}
+#mold {
+  --accent: var(--yellow);
+}
+#vx {
+  --accent: var(--teal);
+}
+#xcl {
+  --accent: var(--pink);
+}
+#xtfc {
+  --accent: var(--orange);
 }
 
-#getmold code {
+#getmold {
+  text-align: center;
+}
+
+pre {
+  text-align: left;
+  display: inline-block;
+  margin: 1.5em auto;
+  width: wrap-content;
   margin: 0 auto;
   padding: 0.5em;
   background-color: var(--codebg);
 }
 
-#mask {--accent: var(--purple);}
-#milk {--accent: var(--blue);}
-#mold {--accent: var(--yellow);}
-#vx {--accent: var(--teal);}
-#xcl {--accent: var(--pink);}
-#xtfc {--accent: var(--orange);}
+pre code {
+}
