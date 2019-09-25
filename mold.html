@@ -24,6 +24,29 @@
       <li>Reducing complexity of task execution</li>
       <li>Using the same commands locally, in CI/CD, and production</li>
     </ul>
+    <p>
+      By reusing parameterized modules, Mold enables new projects to
+      <strong>rapidly</strong> get off the ground with a set of standard tasks. For
+      example, <a href="https://github.com/xtfc/python.mold">python.mold</a>
+      provides tasks for general Python project maintenance: autoformatting with
+      <a href="https://black.readthedocs.io/en/stable/">black</a>, linting with
+      <a href="http://flake8.pycqa.org/en/latest/">flake8</a>, documentation
+      generation with <a href="http://www.sphinx-doc.org/en/master/">Sphinx</a>,
+      etc.
+    </p>
+    <p>
+      These modules can also provide <strong>consistency</strong> across projects from
+      different teams, platforms, and toolchains: linting can generally be run with the
+      <code>lint</code> recipe, tests can generally be run with the <code>test</code>
+      recipe, etc. Consistency cuts down on time spent onboarding and adjusting after
+      switching projects
+    </p>
+    <p>
+      When consistency between projects can't be achieved completely, Mold makes your
+      tasks <strong>discoverable</strong> and <strong>accessible</strong> without having
+      to dig up the documentation. Simply running <code>mold</code> will list all of the
+      magic spells in your project's grimoire.
+    </p>
 
     <section>
       <header>Installation</header>
