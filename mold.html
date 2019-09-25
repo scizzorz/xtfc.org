@@ -15,26 +15,175 @@
     <p class="byline">by <a href="./">xtfc</a></p>
     <p>
       A fresh approach to managing common development tasks like running tests, checking
-      code quality, or building documentation. Easily the most useful thing here.
+      code quality, or building documentation.
     </p>
     <p><strong>Mold</strong> is heavily built around a few core ideas:</p>
     <ul>
-      <li>Reusable, parametrized modules that can be included via URL</li>
+      <li>Reusable, parameterized modules that can be included via URL</li>
       <li>Documenting project tasks in a discoverable way</li>
       <li>Reducing complexity of task execution</li>
       <li>Using the same commands locally, in CI/CD, and production</li>
     </ul>
-    <p>Get the ready-to-use shell script here:</p>
-    <div id="getmold">
-      <pre><code>curl -sSfL xtfc.org/mold.sh | sh</code></pre>
-    </div>
-    <p>
-      <a href="https://xtfc.org/mold.sh">mold.sh</a> is a stand-in for the
-      <strong>Mold</strong> binary. It's intended to be tracked by version control, so
-      it's suitable for use in environments that don't already have Mold installed, like
-      CI/CD or your coworker's computer. It does require the host environment to have
-      internet access and <code>wget</code> or <code>curl</code>
-      installed, as it transparently downloads a full binary to handle actual execution.
-    </p>
+
+    <section>
+      <header>Installation</header>
+      <p>
+        Check the
+        <a href="https://github.com/xtfc/mold/releases">GitHub releases page</a> for
+        binaries, or get the ready-to-use shell script here:
+      </p>
+      <div id="getmold">
+        <pre><code>curl -sSfL xtfc.org/mold.sh | sh</code></pre>
+      </div>
+      <p>
+        <a href="https://xtfc.org/mold.sh">mold.sh</a> is a stand-in for the
+        <strong>Mold</strong> binary. It's intended to be tracked by version control, so
+        it's suitable for use in environments that don't already have Mold installed,
+        like CI/CD or your coworker's computer. It does require the host environment to
+        have internet access and <code>wget</code> or <code>curl</code>
+        installed, as it transparently downloads a full binary to handle actual
+        execution.
+      </p>
+    </section>
+
+    <section>
+      <header>Usage</header>
+      <p>
+        <strong>Mold</strong> is so fun and easy to use. Just type <code>mold</code> (or
+        maybe <code>./mold.sh</code>, if you're doing it that way). It should present
+        you with a list of tasks and helpful descriptions. If you append a task name to
+        the command, like <code>mold foo</code>, it will execute the
+        <code>foo</code> task for you. You can run many tasks in sequence, like
+        <code>mold foo bar</code>.
+      </p>
+      <p>
+        There's also some other junk sitting around if you run <code>mold --help</code>.
+      </p>
+    </section>
+
+    <section>
+      <header>Reference</header>
+      <p>
+        <strong>Mold</strong> reads a recipe file that describes the available
+        incantations and all sorts of fun parameterization options. It can read recipe
+        files as either <a href="https://github.com/toml-lang/toml">TOML</a> or
+        <a href="https://yaml.org">YAML</a>. Maybe some day it will support
+        <strong class="xcl">XCL</strong>.
+      </p>
+      <p>
+        A recipe file describes tasks that can be executed, script runtimes, environment
+        variable definitions, and conditional environment configurations. It may also
+        define a required minimum version of <strong>Mold</strong>.
+      </p>
+
+      <section>
+        <header>Recipes</header>
+        <p>
+          A recipe describes a task that can be executed and can take any of several
+          forms:
+        </p>
+        <p>
+          A <strong>command</strong> is an executable and a list of arguments. It does
+          not support any sort of variable substitution or interpolation; the list of
+          arguments is used as a literal and passed straight to the OS for execution.
+        </p>
+        <p>
+          A <strong>script</strong> is an inline script file and a script runtime. The
+          inline script will be written to a temporary file and invoked using the script
+          runtime. This is suitable for small scripts on the order of ~10 lines.
+        </p>
+        <p>
+          A <strong>file</strong> is a separate script file, located in the
+          <code>mold/</code> directory by default, and a script runtime. The file will
+          be invoked using the script runtime. This is suitable for scripts of any size
+          or language. The script file directory can be changed in the root of the
+          recipe file.
+        </p>
+
+        <p>
+          A <strong>module</strong> is a reference to a remote Git repository that
+          contains a separate <strong>Mold</strong> configuration. Modules can target a
+          specific branch / tag as well as a specific recipe file inside the repo.
+          Recipes inside the module can be accessed with a prefix.
+        </p>
+        <p>
+          All recipes can be configured with an optional help string, prerequisite
+          tasks, environment variable definitions, and conditional environment variable
+          definitions.
+        </p>
+      </section>
+
+      <section>
+        <header>Runtimes</header>
+        <p>
+          A <strong>runtime</strong> defines an interpreter that can be used to execute
+          scripts and files. Runtimes are defined by a name, command, and file
+          extensions. The name is used as an identifier by scripts and files, so it must
+          be unique. The command is a list of arguments that can be passed to the OS to
+          execute the interpreter; any <code>"?"</code> elements will be replaced with
+          the file to be executed. The file extensions are defined as a list of
+          potential extensions to attach to a filename.
+        </p>
+        <p>
+          See <a href="https://github.com/xtfc/std.mold">std.mold</a> for example
+          runtime definitions.
+        </p>
+      </section>
+
+      <section>
+        <header>Includes</header>
+        <p>
+          An <strong>include</strong> is a reference to a module that is included at the
+          top-level, rather than behind a namespace prefix. This is useful for things
+          like <a href="https://github.com/xtfc/std.mold">std.mold</a> that define
+          general-purpose runtimes or recipes.
+        </p>
+      </section>
+
+      <section>
+        <header>Variables</header>
+        <p>
+          <strong>Environment variables</strong> are used to parameterize recipes. When
+          using modules, it's often beneficial to use variables to ensure the module is
+          generalized sufficiently. Variables can be configured at the root level or at
+          an individual recipe level.
+        </p>
+      </section>
+
+      <section>
+        <header>Conditional Environments</header>
+        <p>
+          <strong>Conditional environments</strong> allow environment variables to be
+          defined based on a runtime setting. Environments are defined as a test
+          expression and a variable map. The test is a simple expression that checks for
+          the presence or absence of values in the active
+          <strong>Mold</strong> environment list. If a test evaluates to
+          <strong>true</strong>, the corresponding variable map will be applied.
+          Conditional environments are applied in-order, overwriting values defined in
+          the non-conditional <strong>variables</strong> map and in previous conditional
+          environments.
+        </p>
+        <p>
+          <strong>Active environments</strong> are set as a comma-separated list of
+          alphanumeric strings in the <code style="text-transform: none">$MOLDENV</code>
+          environment variable or the <code>--env</code> / <code>-e</code> CLI flag.
+          Additional environments can be appended one at a time using the
+          <code>--add</code> / <code>-a</code> CLI flag.
+        </p>
+        <p>
+          <strong>Test expressions</strong> are written in a minimal language designed
+          for checking combinations of active environments. Any alphanumeric string is a
+          check for that identifier in the active environments; it evaluates to
+          <code>true</code> if that identifier is present. Boolean <code>and</code> is
+          expressed with the <code>+</code> operator, while boolean <code>or</code> and
+          <code>not</code> are expressed with the <code>|</code> and
+          <code>~</code> operators, respectively. Subexpressions can be grouped using
+          <code>()</code>.
+        </p>
+        <p>
+          Environment identifiers can also have underscores and hyphens. Whatever.
+        </p>
+      </section>
+    </section>
   </body>
 </html>

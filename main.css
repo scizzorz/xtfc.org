@@ -35,22 +35,28 @@
   --xtfc: var(--orange);
 }
 
-#mask {
+#mask,
+.mask {
   --accent: var(--mask);
 }
-#milk {
+#milk,
+.milk {
   --accent: var(--milk);
 }
-#mold {
+#mold,
+.mold {
   --accent: var(--mold);
 }
-#vx {
+#vx,
+.vx {
   --accent: var(--vx);
 }
-#xcl {
+#xcl,
+.xcl {
   --accent: var(--xcl);
 }
-#xtfc {
+#xtfc,
+.xtfc {
   --accent: var(--xtfc);
 }
 
@@ -125,9 +131,14 @@ section > header {
 }
 
 section > section > header {
-  font-size: 1em;
-  border-bottom: 2px;
+  font-size: 1.2em;
+  border-bottom: 1px;
   border-style: solid;
+}
+
+section > section > section > header {
+  font-size: 1em;
+  border: none;
 }
 
 strong {
