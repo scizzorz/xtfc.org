@@ -148,6 +148,25 @@
           generalized sufficiently. Variables can be configured at the root level or at
           an individual recipe level.
         </p>
+        <p>
+          <strong>Mold</strong> automatically exports several environment
+          variables that describe its runtime context:
+        </p>
+        <ul>
+          <li><code style="text-transform: none">$MOLD_ROOT</code>: directory containing the recipe file</li>
+          <li><code style="text-transform: none">$MOLD_FILE</code>: recipe file path</li>
+          <li><code style="text-transform: none">$MOLD_DIR</code>: recipe directory path</li>
+          <li><code style="text-transform: none">$MOLD_CLONE_DIR</code>: directory containing module repositories</li>
+          <li><code style="text-transform: none">$MOLD_SCRIPT_DIR</code>: directory containing temporary script files</li>
+          <li><code style="text-transform: none">$MOLD_SEARCH_DIR</code>: directory searched for recipe files</li>
+          <li><code style="text-transform: none">$MOLD_WORK_DIR</code>: working directory</li>
+          <li><code style="text-transform: none">$MOLD_MODULE_ROOT</code>: directory containing recipe file for current recipe's module</li>
+        </ul>
+        <p>
+          In simple configurations, several of the directories will be
+          identical, but they can be useful in more complicated configurations
+          involving nested modules.
+        </p>
       </section>
 
       <section>
