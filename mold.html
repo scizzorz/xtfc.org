@@ -60,7 +60,7 @@
       </div>
       <p>
         <a href="https://xtfc.org/mold.sh">mold.sh</a> is a stand-in for the
-        <strong>Mold</strong> binary. It's intended to be tracked by version control, so
+        Mold binary. It's intended to be tracked by version control, so
         it's suitable for use in environments that don't already have Mold installed,
         like CI/CD or your coworker's computer. It does require the host environment to
         have internet access and <code>wget</code> or <code>curl</code>
@@ -72,7 +72,7 @@
     <section>
       <header>Usage</header>
       <p>
-        <strong>Mold</strong> is so fun and easy to use. Just type <code>mold</code> (or
+        Mold is so fun and easy to use. Just type <code>mold</code> (or
         maybe <code>./mold.sh</code>, if you're doing it that way). It should present
         you with a list of tasks and helpful descriptions. If you append a task name to
         the command, like <code>mold foo</code>, it will execute the
@@ -87,16 +87,15 @@
     <section>
       <header>Reference</header>
       <p>
-        <strong>Mold</strong> reads a recipe file that describes the available
-        incantations and all sorts of fun parameterization options. It can read recipe
-        files as either <a href="https://github.com/toml-lang/toml">TOML</a> or
-        <a href="https://yaml.org">YAML</a>. Maybe some day it will support
+        Mold reads a recipe file that describes the available
+        incantations and all sorts of fun parameterization options. Recipe files are
+        written in <a href="https://yaml.org">YAML</a>. Maybe some day it will support
         <strong class="xcl">XCL</strong>.
       </p>
       <p>
         A recipe file describes tasks that can be executed, script runtimes, environment
         variable definitions, and conditional environment configurations. It may also
-        define a required minimum version of <strong>Mold</strong>.
+        define a required minimum version of Mold.
       </p>
 
       <section>
@@ -125,7 +124,7 @@
 
         <p>
           A <strong>module</strong> is a reference to a remote Git repository that
-          contains a separate <strong>Mold</strong> configuration. Modules can target a
+          contains a separate Mold configuration. Modules can target a
           specific branch / tag as well as a specific recipe file inside the repo.
           Recipes inside the module can be accessed with a prefix.
         </p>
@@ -172,7 +171,7 @@
           an individual recipe level.
         </p>
         <p>
-          <strong>Mold</strong> automatically exports several environment
+          Mold automatically exports several environment
           variables that describe its runtime context:
         </p>
         <ul>
@@ -199,7 +198,7 @@
           defined based on a runtime setting. Environments are defined as a test
           expression and a variable map. The test is a simple expression that checks for
           the presence or absence of values in the active
-          <strong>Mold</strong> environment list. If a test evaluates to
+          Mold environment list. If a test evaluates to
           <strong>true</strong>, the corresponding variable map will be applied.
           Conditional environments are applied in-order, overwriting values defined in
           the non-conditional <strong>variables</strong> map and in previous conditional
@@ -214,11 +213,10 @@
         </p>
         <p>
           <strong>Test expressions</strong> are written in a minimal language designed
-          for checking combinations of active environments. Any alphanumeric string is a
-          check for that identifier in the active environments; it evaluates to
-          <code>true</code> if that identifier is present. Boolean <code>and</code> is
-          expressed with the <code>+</code> operator, while boolean <code>or</code> and
-          <code>not</code> are expressed with the <code>|</code> and
+          for checking combinations of active environments. Any environment identifier
+          evaluates to <code>true</code> if that identifier is active. Boolean
+          <code>and</code> is expressed with the <code>+</code> operator, while boolean
+          <code>or</code> and <code>not</code> are expressed with the <code>|</code> and
           <code>~</code> operators, respectively. Subexpressions can be grouped using
           <code>()</code>.
         </p>
