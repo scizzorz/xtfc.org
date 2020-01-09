@@ -148,6 +148,7 @@ strong {
 
 code {
   color: var(--accent);
+  text-transform: none;
 }
 
 pre code {
